@@ -33,17 +33,11 @@ void clockLatchLed();
 #define High 0x01
 
 int main(int argc, char** argv) {
+ 
+    while(1) {
 
-    while(1) { 
-    
-    blinkLeds(0b00000001, 50, 1);
-    blinkLeds(0b00000010, 50, 1);
-    blinkLeds(0b00000100, 50, 1);
-    blinkLeds(0b00001000, 50, 1);
-    blinkLeds(0b00010000, 50, 1);
-    blinkLeds(0b00100000, 50, 1);
-    blinkLeds(0b01000000, 50, 1);
-    blinkLeds(0b10000000, 50, 1);
+        for (int bit = 0b00000001; bit < 256; bit <<= 1)
+            blinkLeds(bit, 50, 1);
 
     }
 
