@@ -13,6 +13,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Defines //
+
+#define _XTAL_FREQ 4000000
+#define Low  0x00
+#define High 0x01
+
 // Pragmas //
 
 #pragma config WDT = OFF      
@@ -23,12 +29,6 @@
 
 // Functions //
 
-
-// Defines //
-
-#define _XTAL_FREQ 4000000
-#define Low  0x00
-#define High 0x01
 
 int main(int argc, char** argv) {
 

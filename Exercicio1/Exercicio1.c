@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
  
     while(1) {
 
-        for (int bit = 0b00000001; bit < 256; bit <<= 1)
+        for (int bit = 0b00000001; bit <= 128; bit <<= 1)
             blinkLeds(bit, 50, 1);
 
     }
