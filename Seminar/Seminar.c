@@ -20,7 +20,7 @@ void __interrupt(high_priority) my_isr() {
         ADCON0bits.GO = HIGH;       // Inicia a conversão
         while(ADCON0bits.GODONE);  // Espera até o fim da conversão
         unsigned int valor_adc = (ADRESH * 256) + ADRESL; // Soma os dois bytes da conversão de 10 bits e armazena na variavel
-        PR2 = map(valor_adc, 0, 1023, 249, 24); // Converte o valor de 0 a 1023 para 1000KHZ a 10.000KHZ
+        PR2 = map(valor_adc, 0, 1023, 249, 24); // Converte o valor de 0 a 1023 para 1.000HZ a 10.000HZ
         DutyCycle();                 // Chama função para calcular DutyCycle da nova frequência
         INTCONbits.TMR0IF = LOW;    // Reseta a flag do Timer0
         TMR0 = 15536;              // Carrega o Timer0 para 50ms     
